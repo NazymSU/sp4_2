@@ -23,7 +23,6 @@ public class DBConnection {
         ArrayList<Items> items=new ArrayList<>();
       try{
           PreparedStatement statement=connection.prepareStatement("select * from items");
-
           ResultSet resultSet=statement.executeQuery();
 
           while (resultSet.next()){

@@ -12,37 +12,38 @@
 <body>
 <%@include file="navbar.jsp"%>
 <div class="container mt-3">
-   <div class="row">
-      <h4 class="text-center">
-         Welcome to BITLAB SHOP
-      </h4>
-      <h6 style="color:darkgray" class="text-center">
-         Electronic devices with high quality and service
-      </h6>
-   </div>
+   <div class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-start">
+      <div class="row">
+         <h4 class="text-center">
+            Welcome to BITLAB SHOP
+         </h4>
+         <h6 style="color:darkgray" class="text-center">
+            Electronic devices with high quality and service
+         </h6>
+      </div>
    <%
       ArrayList<Items> zattar = (ArrayList<Items>) request.getAttribute("zattar");
       if(zattar!=null){
          for (Items item:zattar) {
             System.out.print(item.getId());
    %>
-      <div class="col">
-         <div class="card border-secondary mb-3" style="max-width: 14rem;">
-            <div class="card-header"><%=item.getName()%></div>
-            <div class="card-body text-secondary">
-               <h5 class="card-title text-success"><%=item.getPrice()%></h5>
-               <p class="card-text"><%=item.getDescription()%></p>
-               <div class="d-grid gap-2">
-                  <a href="#" class="btn btn-success">Buy Now</a>
+            <div class="col">
+               <div class="card border-secondary mb-3" style="max-width: 14rem;">
+                  <div class="card-header"><%=item.getName()%></div>
+                  <div class="card-body text-secondary">
+                     <h5 class="card-title text-success"><%=item.getPrice()%></h5>
+                     <p class="card-text"><%=item.getDescription()%></p>
+                     <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-success">Buy Now</a>
+                     </div>
+                  </div>
                </div>
             </div>
-         </div>
-      </div>
-
-<%
-      }
-   }
-%>
+      <%
+            }
+         }
+      %>
+   </div>
 </div>
 </body>
 </html>
