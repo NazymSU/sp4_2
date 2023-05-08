@@ -11,8 +11,9 @@
 </head>
 <body>
 <%@include file="navbar.jsp"%>
+<div>
 <div class="container mt-3">
-   <div class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-start">
+   <div class="row row-cols-1 row-cols-md-3  d-flex justify-content-start">
       <div class="row">
          <h4 class="text-center">
             Welcome to BITLAB SHOP
@@ -21,14 +22,18 @@
             Electronic devices with high quality and service
          </h6>
       </div>
+   </div>
+</div>
+</div>
+   <br>
    <%
       ArrayList<Items> zattar = (ArrayList<Items>) request.getAttribute("zattar");
       if(zattar!=null){
          for (Items item:zattar) {
             System.out.print(item.getId());
    %>
-            <div class="col">
-               <div class="card border-secondary mb-3" style="max-width: 14rem;">
+            <div class="col ">
+               <div class="card border-secondary mb-3 " style="max-width: 14rem;">
                   <div class="card-header"><%=item.getName()%></div>
                   <div class="card-body text-secondary">
                      <h5 class="card-title text-success"><%=item.getPrice()%></h5>

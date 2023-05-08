@@ -9,29 +9,19 @@
 <div class="container" style="min-height: 500px;">
     <div class="row mt-3">
         <div class="col-6 mx-auto">
-                <%
-                       String emailError = request.getParameter("emailerror");
-                       if(emailError!=null){
-                   %>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Incorrect email, try again!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-                <%
-                       }
-                   %>
-                <%
-                       String passwordError = request.getParameter("passworderror");
-                       if(passwordError!=null){
-                   %>
-
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Incorrect password, try again!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-                <%
-                       }
-                   %>
+    <div class="row">
+    </div>
+    <%
+        String emailError = request.getParameter("error");
+        if (emailError != null) {
+    %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Incorrect email or password, try again!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <%
+        }
+    %>
             <form action="/login" method="post">
                 <div class="card">
                     <div class="card-header">
